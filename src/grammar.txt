@@ -1,0 +1,12 @@
+START -> EXPRESSION
+EXPRESSION -> TERM + EXPRESSION
+            | TERM - EXPRESSION
+			| TERM
+TERM -> POWERED_TERM "*" TERM
+      | POWERED_TERM "/" TERM
+	  | POWERED_TERM
+POWERED_TERM -> FACTOR "^" POWERED_TERM
+              | FACTOR
+FACTOR -> "-"? "("EXPRESSION")"
+        | "-"? tk_variable
+        | "-"? tk_constant
