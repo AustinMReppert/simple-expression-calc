@@ -17,7 +17,7 @@ public abstract class Node implements Evaluable {
 
   /**
    * Get a double representation of {@code this}.
-   * @param variableTable {@link HashMap<String, Double>} that may be used to evaluate {@link Variable}s.
+   * @param variableTable {@link HashMap} that may be used to evaluate {@link Variable}s.
    * @return A double representation of {@code this}.
    */
   @Override

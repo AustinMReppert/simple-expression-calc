@@ -12,7 +12,7 @@ public class Main {
 
     System.out.println("The constants e and pi are already defined. Please enter variables(a-Z) as CSV(e.g. x=1,y=2):");
     String rawVariables = scanner.nextLine().replaceAll(" ", "").replaceAll("\t", "");
-    String variables[] = rawVariables.split(",");
+    String[] variables = rawVariables.split(",");
     HashMap<String, Double> variableTable = new HashMap<>();
     for (String variable : variables) {
       if (variable.isBlank() || variable.length() < 3) continue;
@@ -30,8 +30,8 @@ public class Main {
     final var tokens = lexer.lex();
 
     System.out.println("Tokens:");
-    for(int i = 0; i < tokens.size(); ++i) {
-      System.out.println("\t" + tokens.get(i));
+    for (Token token : tokens) {
+      System.out.println("\t" + token);
     }
 
     Parser parser = new Parser(tokens);
